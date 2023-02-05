@@ -1,22 +1,23 @@
-function selectionSort(arr) {
-    for (let i = 0; i < arr.length; i++) {
-      let minIndex = i;
-      for (let j = i + 1; j < arr.length; j++) {
-        if (arr[j] < arr[minIndex]) {
-          minIndex = j;
-        }
-      }
-      if (minIndex !== i) {
-        let temp = arr[i];
-        arr[i] = arr[minIndex];
-        arr[minIndex] = temp;
-      }
-    }
-    return arr;
+const selectionSort =(Array)=>{
+  const n= array.length
+  let i,j
+  for (i=0;i<n-1;i++){
+   let minindex= i
+   for(j=i+1;j<n;j++){
+ 
+     if (array[j]<array[minindex]){
+       minindex =j
+     }
+   }
+ 
+   const temp = array[minindex]
+   array[minindex]=array[i]
+   array[i] =temp
   }
-  
-
-const arr=[12,34,2,1,4,6,4,9]
-const answer=selectionSort(arr)
-console.log(answer);
-
+ return array
+ }
+ 
+ const array = [34,43,34,32,24,42,3,1,12,44,]
+ 
+ const result = selectionSort(array)
+ console.log(result);
