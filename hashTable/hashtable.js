@@ -40,8 +40,11 @@ class HashTable {
   
   ht.set("Canada", 300);
   ht.set("France", 100);
+  ht.set("India", 100);
   
   console.log(ht.get("Canada"));
   console.log(ht.get("France"));
+  console.log(ht.get("India"));
   console.log(ht.remove("Canada"));
-  console.log(ht.get("Canadaa"));
+  console.log(ht.remove("India"));
+console.log(ht.get("Canada"));
