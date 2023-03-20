@@ -1,18 +1,19 @@
 class hashTable {
-    constructor(size){
-        this.table = new Array(size)
-        this.size = size
+    constructor(){
+        this.table = new Array(100)
+        this.size = 0
     }
     hash(key){
         let total = 0
         for (let i = 0; i < key.length; i++) {
             total += key.charCodeAt(i)
         }
-        return total % this.size
+        return total % this.table.length
     }
     set(key, value){
         const index = this.hash(key)
-        this.table[index] = value
+        this.table[index] = [key, value]
+        this.size++
     }
     get(key){
         const index = this.hash(key)
@@ -20,23 +21,15 @@ class hashTable {
     }
     remove(key){
         const index = this.hash(key)
-        this.table[index] = undefined
+        this.table[index] = []
     }
-    display(){
-        for (let i = 0; i < this.table.length; i++) {
-            if(this.table[i]){
-                console.log(i, this.table[i]);
-            }       
-        }
-    }
+  
 }
-const table = new hashTable(10)
+const ht = new hashTable()
+ht.set("ajmal", 4)
+ht.set("fsl", 94)
+ht.set("ameer", 4)
 
-table.set("ajmal", 24)
-table.set("ajmal", 24)
-table.display()
- 
-console.log(table.get("phone"));
-
-table.remove("phone")
-table.display()
+// console.log(table.get("phone"));
+ht.remove("ameer")
+console.log(ht)

@@ -25,7 +25,6 @@ class HashTable {
   
     remove(key) {
       const index = this._hash(key);
-  
       if (this.table[index] && this.table[index].length) {
         this.table[index] = [];
         this.size--;
@@ -45,6 +44,6 @@ class HashTable {
   console.log(ht.get("Canada"));
   console.log(ht.get("France"));
   console.log(ht.get("India"));
-  console.log(ht.remove("Canada"));
   console.log(ht.remove("India"));
 console.log(ht.get("Canada"));
+console.log(ht)

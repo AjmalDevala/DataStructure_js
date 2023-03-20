@@ -1,19 +1,16 @@
-const bubbleSort = (array) => {
-    let  i,j,temp
-    let n = array.length;
-    for (i=0; i < n-1; i++){
-       for (j=0; j <n-i-1; j++){
-        if ( array[j] > array[j+1] ){
-            temp = array[j];
-            array[j] = array[j+1];
-            array[j+1] = temp;
-        }
-       }
-    }
-    return array
+let arr = [1, 2, 3, 4,1, 5];
+
+let isSorted = true;
+
+for (let i = 0; i < arr.length - 1; i++) {
+  if (arr[i] > arr[i+1]) {
+    isSorted = false;
+    break;
+  }
 }
-const arr = [34, 57, 68, 86, 200, 4, 10]
-const result = bubbleSort(arr);
-result.forEach(element => {
-    console.log(element);
-});
+
+if (isSorted) {
+  console.log("The array is sorted in ascending order.");
+} else {
+  console.log("The array is not sorted in ascending order.");
+}

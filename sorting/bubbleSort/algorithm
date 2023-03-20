@@ -1,0 +1,13 @@
+1: start bubbleSort(arr)
+2: for loop till arr length - 1
+3: set swapped false
+4: nested for loop till arr length - i - 1
+5: do comparison with current and next element
+6: if true swap
+7: set swapped true
+8: end if
+9: end nested loop
+8: check if swapped is false, then break
+9: else continue for loop
+8: else end loop
+9: end bubbleSort() 

@@ -1,48 +1,31 @@
 function reverse(string) {
-    let reversed = ''
-    for (let character of string) {
-      reversed = character + reversed
-    }
-    return reversed
+  let reversed = ''
+  for (let character of string) {
+    reversed = character + reversed
   }
-
-  let s = "levelww"
-  console.log(reverse(s));
-  
-  function reverseFn(s){
-      return s.split('').reverse('').join('')
-    }
-    console.log(reverseFn(s));
-
-
-    function palindrom(s){
-       const pali =  reverseFn(s)
-       return pali  === s 
-    }
-
-    console.log(palindrom(s))
-
-
-    //sorting lenth and data 
-
-
-
-    var key = 3;
-var newKey = key % 26;
-console.log(newKey);
-var word = 'hello'
-console.log(word.length);
-
-for (let i = 0; i < word.length; i++) {
-    let letterPosition = word.charAt(i) + newKey;
-    if(letterPosition <= 122){
-        word[i]
-    }
-    
+  return reversed
 }
 
+// let s = "level"
+// console.log(reverse(s));
+
+function reverseFn(s) {
+  return s.split('').reverse('').join('')
+}
+// const s= "ajmal"
+// console.log(reverseFn(s));
 
 
+function palindrom(s) {
+  const pali = reverseFn(s)
+  return pali === s
+}
+
+// const s ="malayala"
+// console.log(palindrom(s))
+
+
+//sorting lenth and data 
 
 // data template litteralse
 
