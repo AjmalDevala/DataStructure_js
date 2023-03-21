@@ -1,63 +1,18 @@
-// function bubbleSort(arr) {
-//     let swapped;
-//     for (var i = 0; i < arr.length - 1; i++) {
-//       swapped = false;
-//       for (var j = 0; j < arr.length - i - 1; j++) {
-//         if (arr[j] < arr[j + 1]) {
-//           var temp = arr[j];
-//           arr[j] = arr[j + 1];
-//           arr[j + 1] = temp;
-//           swapped = true;
-//         }
-//       }
-//       if (!swapped) break;
-//     }
-//   }
-  
-//   let arr = [1, 23, 65, 3, 2, 1];
-  
-//   bubbleSort(arr);
-//   console.log(arr);
 
-
-
-class hashtable {
-  constructor(){
-    this .table= new Array(100)
-    this .size = 0
-  }  
-
-
-  _hash (key){
-    let total =0
-    for(let i = 0 ; i< key.length ;i++ ){
-      total += key.charCodeAt(i)
+function bubbleSort(array){
+  let n= array.length
+  let i,j,temp
+  for(i=0 ; i< n ; i++){
+    for(j=0 ; j< n ; j++){
+      if( array[j] > array[j+1] ){
+        temp= array[j]
+        array[j]= array[j+1]
+        array[j+1]=temp
+      }
     }
-    return total % this.table.length
   }
-
-  set(key, value){
-    let index = this._hash(key)
-    this.table[index]= [key,value]
-     this.size++
-  }
-  get(key){
-    let index = this ._hash(key )
-    return this.table[index]
-  }
-  remove(key){
-    let index = this ._hash(key)
-    this.table[index]= []
-   this.size --
-  }
-
+  return array
 }
 
-const  ht= new hashtable()
-ht.set("ajmal" ,45)
-ht.set("afsa" ,5)
-// console.log(ht)
-console.log(ht.remove("ajmal"))
-console.log(ht)
-ht.set("ajmal", 45)
-console.log(ht)
+const array= [5,5,23,32,3,2,1,3,5,6]
+console.log(bubbleSort(array))

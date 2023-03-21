@@ -1,21 +1,23 @@
-function selectionSort(arr) {
-    let i, j, large;
-    for (i = 0; i < arr.length - 1; i++) {
-      large = i;
-      for (j = i; j < arr.length; j++) {
-        if (arr[j] > arr[large]) {
-          large = j;
-        }
+function selectionSort (array){
+  let n= array.length
+  let i,j,temp
+  for(i=0 ; i<n-1 ; i++){
+    let small = i
+    for(j=i+1 ; j<n ;j++){
+      if(array[j] < array[small]){
+        small =j
       }
-      swap(arr, large, i);
     }
+    temp = array[small]
+    array[small]=array[i]
+    array[i]= temp
   }
+  return array
+}
+
+const array=[4,3,2,4,6,3,2,134,5,]
+const sorted = selectionSort(array)
+sorted.forEach(element => {
+  console.log(element)
   
-  function swap(arr, x, y) {
-    let temp = arr[x];
-    arr[x] = arr[y];
-    arr[y] = temp;
-  }
-  let arr = [12, 43, 21, 51, 15, 11];
-  selectionSort(arr);
-  console.log(arr);
+});

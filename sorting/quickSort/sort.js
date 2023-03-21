@@ -1,40 +1,36 @@
-// pick a pivot
-// divide and sort
+function swap(array, leftIndex, rightIndex) {
+  [array[leftIndex], array[rightIndex]] = [ array[rightIndex], array[leftIndex]]
+ }
 
-function quickSort(arr, firstElement, lastElement) {
-  var index;
-  if (arr.length > 1) {
-    index = partition(arr, firstElement, lastElement);
-    if (firstElement < index - 1) {
-      quickSort(arr, firstElement, index - 1);
-    }
-    if (index < lastElement) {
-      quickSort(arr, index, lastElement);
-    }
-  }
-  return arr;
+const partition = (array, left, right) => {
+   let pivotIdx = right;
+   let startIdx = left; 
+   let endIdx = right;
+   while(startIdx < endIdx){
+       while(array[startIdx] <= array[pivotIdx]){
+           startIdx++
+       }
+       while(array[endIdx] > array[pivotIdx]){
+           endIdx--
+       }
+       if(startIdx < endIdx){
+           swap(array, startIdx, endIdx)
+       }
+   }
+   swap(array, pivotIdx, endIdx)
+   return endIdx
 }
 
-function partition(arr, first, last) {
-  let pivot = arr[Math.floor((first + last) / 2)];
-  let i = first,
-    j = last;
-  while (i <= j) {
-    while (arr[i] < pivot) {
-      i++;
-    }
-    while (arr[j] > pivot) {
-      j--;
-    }
-    if (i <= j) {
-      swap(arr, i, j);
-      i++;
-      j--;
-    }
-  }
-  return i;
+function quickSort(array, left, right){
+  var keyIdx=[]
+   if(left < right){
+       keyIdx = partition(array, left, right)
+       quickSort(array, left, keyIdx-1)
+       quickSort(array, keyIdx+1, right)
+   }
+   return array
 }
 
-
-const array = [ 4,3,343,12,3,21]
-console.log(array)
+let array = [300, 44, 56, 34, 78,100, 2, 10]
+let sortedArray = quickSort(array, 0, array.length - 1);
+console.log(sortedArray);
