@@ -21,8 +21,8 @@ function palindrom(s) {
   return pali === s
 }
 
-// const s ="malayala"
-// console.log(palindrom(s))
+const s ="malayalam"
+console.log(palindrom(s))
 
 
 //sorting lenth and data 

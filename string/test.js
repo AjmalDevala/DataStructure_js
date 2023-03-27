@@ -23,10 +23,23 @@ console.log(data.concat())
 function reverse(string) {
     let reversed = ''
     for (let character of string) {
-      reversed = character + reversed
+      return reversed = character + reversed
     }
-    return reversed  
+  
   }
 
-const result = reverse("datadd")
+const result = reverse("hamme")
 console.log(result)
+
+
+
+function reverse (str){
+  let temp =''
+  for( let i=str.length-1 ;i>= 0 ; i--){
+     temp += str[i]
+  }
+  return temp
+}
+console.log(reverse ("ajmal"))
+
+

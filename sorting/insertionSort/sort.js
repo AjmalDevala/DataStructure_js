@@ -1,17 +1,14 @@
-function insertionsort(array){
-  let i,j
-  for(i=1 ; i< array.length ; i++){
-    insert= array[i]
-    for(j= i-1 ; array[j] >insert ; j--){
-      array[j+1]= array[j]
+function insertionSort(array){
+  let i, j ,currentVal
+  let n= array.length
+  for(i=1 ; i < n ; i++){
+    currentVal=array[i]
+    for( j=i-1 ; array[j] > currentVal ; j--){
+      array[j+1 ] = array [j]
     }
-    array[j+1]= insert
-    console.log(insert,"djhfgkh")
+    array[j+1] =currentVal
   }
   return array
 }
 
-
-const array = [3,4,2,1,3,5,5,6,9] 
-const result= insertionsort(array)
-console.log(result)
+console.log(insertionSort([3,4,655,1,3,55,62]))

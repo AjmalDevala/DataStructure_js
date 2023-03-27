@@ -14,5 +14,5 @@ const insertionSort = (array) => {
 let arr = [18, 48, 58, 9, 4, 67, 30]
 const result = insertionSort(arr);
 result.forEach(element => {
-    console.log("==>"+element)
+    console.log(element)
 });

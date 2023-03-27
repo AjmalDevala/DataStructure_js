@@ -1,21 +1,19 @@
-function bubbleSort(arr) {
-    for (let i = 0; i < arr.length; i++) {
-      for (let j = 0; j < arr.length - i - 1; j++) {
-        if (arr[j] > arr[j + 1]) {
-          let temp = arr[j];
-          arr[j] = arr[j + 1];
-          arr[j + 1] = temp;
-        }
+function bubbleSort(array){
+  let i , j, temp
+  for(i=0 ; i< array.length ; i++){
+    for(j=0 ; j<array.length-i-1 ;j++){
+      if(array[j] >  array[j+1]){
+        temp = array[j+1]
+        array[j+1]= array[j]
+        array[j]= temp
       }
     }
-    return arr;
   }
-  const arr=[4,3,2,5,7,8,4,2]
-  const result = bubbleSort(arr);
-
-  console.log(result);
+  return array
+}
 
 
+console.log(bubbleSort([4,3,4,23,5,2,1]))
 
 
 

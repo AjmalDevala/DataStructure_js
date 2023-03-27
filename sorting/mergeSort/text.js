@@ -8,29 +8,22 @@
 // and merge the array
 // and return the arrray
 
-function mergeSort(arr){
-    if(arr.length <=1) return arr
-    let mid = Math.floor(arr.length/2),
-    left = mergeSort(arr.slice(0,mid))
-    rihgt = mergeSort(arr.slice(mid))
-    console.log(left,"lefttttt")
-    console.log(rihgt,"rihgt")
-    return merge(left,rihgt)
+function mergeSort(array){
+    if( array.length <= 1) return array
+    let mid = Math.floor(array.length/2)
+    let left=mergeSort(array.slice(0,mid))
+    let right=mergeSort(array.slice(mid))
+    return merge(left,right)
 }
-
-function merge(i ,j){
-    let sorted = []
-    while(i.length && j.length){
-        if(i[0] <j[0]) sorted.push(i.shift())
-        else sorted.push(j.shift())
+function merge(arr1,arr2){
+    let sorted =[]
+    while(arr1.length && arr2.length){
+        if(arr1[0]< arr2[0]) sorted.push(arr1.shift())
+        else sorted.push(arr2.shift())
     }
-    console.log(sorted,"sorted")
-    console.log(i,"iiii")
-    console.log(j,"jjjj")
- return [...sorted,...i,...j]
-
+    return [...sorted,...arr1,...arr2]
+    // return sorted.concat(arr1,arr2)
 }
 
-
-let array = [3,3,2,3,4,2,1,9,34]
+const array= [4,3,2,5,6,7,2,1]
 console.log(mergeSort(array))
