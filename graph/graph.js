@@ -88,7 +88,7 @@ class Graph {
   g.addEdges("C", "D");
   g.addEdges("A", "D");
   
-  // g.printGraph()
+  g.printGraph()
   
   console.log(g.breadthFirst("A"))
   console.log(g.dfs('A'))

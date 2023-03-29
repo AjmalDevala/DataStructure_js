@@ -24,7 +24,7 @@ function buildHeap(arr) {
     }
   }
   
-  let arr = [2, 4, 25, 67, 10];
+  const arr= [4,2,1,4,6,7,-1]
   
   buildHeap(arr);
   console.log(arr);

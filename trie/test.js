@@ -1,21 +1,19 @@
 class node{
-    constructor(value){
+    constructor (value){
         this.value =value
-        this.endWord =false
-        this.child ={}
+        this.isEndOfWord =false
+        this.children ={}
     }
 }
 
-class trie{
+class Trie{
     insert(word){
-        this.root =new node(null)
+        this.root = new node(null)
         let current =this.root
-        for(let char of word){
-            if(!current.child[char]){
-                current.child[char]=new node(char)
+        for(let char of  word){
+            if(!current.children [char]){
+                
             }
-            current =current.child[char]
         }
-        current.endWord =true
     }
 }

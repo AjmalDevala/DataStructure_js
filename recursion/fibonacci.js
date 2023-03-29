@@ -11,4 +11,4 @@ function printFib(n) {
   }
 }
 
-printFib(7)
+printFib(8)

@@ -10,11 +10,11 @@ function buildHeap(arr) {
     let leftChild = 2 * i + 1;
     let rightChild = 2 * i + 2;
   
-    if (leftChild < n && arr[leftChild] > arr[largest]) {
+    if (leftChild < n && arr[leftChild] < arr[largest]) {
       largest = leftChild;
     }
   
-    if (rightChild < n && arr[rightChild] > arr[largest]) {
+    if (rightChild < n && arr[rightChild] < arr[largest]) {
       largest = rightChild;
     }
   

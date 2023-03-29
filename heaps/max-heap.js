@@ -1,7 +1,7 @@
 function buildHeap(arr) {
     const n = arr.length;
     for (let i = Math.floor(n / 2) - 1; i >= 0; i--) {
-      heapify(arr, i, n); // i will be last the parent node
+      heapify(arr, i, n); // i will be last parent node
     }
   }
   
@@ -24,7 +24,7 @@ function buildHeap(arr) {
     }
   }
   
-  let arr = [2, 4, 25, 67, 10];
+  const arr= [3,5,6,3,23,1,3,6]
   
   buildHeap(arr);
   console.log(arr);

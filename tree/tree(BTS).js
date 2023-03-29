@@ -98,16 +98,16 @@ class BinerySearchTree {
         this.root = this.deleteNode(this.root, value)
     }
 
-    deleteNode(root, value) {
+    deleteNode(root, value) { 
         if (root === null) {
             return null
         }
         if (value < root.value) {
             root.left = this.deleteNode(root.left, value)
-        } else if (value > root.right) {
+        } else if (value > root.value) {
             root.right = this.deleteNode(root.right, value)
-        } 
-        if (!root.left && !root.right) {
+        } else {
+        if(!root.left && !root.right) {
             return null
         }
         if (!root.left) {
@@ -117,9 +117,9 @@ class BinerySearchTree {
         }
         root.value = this.min(root.right)
         root.right = this.deleteNode(root.right, root.value)
-        return root
     }
-    
+    return root
+}
 }
 
 const bts = new BinerySearchTree()
@@ -130,8 +130,8 @@ bts.insert(5)
 bts.insert(34)
 bts.insert(2)
 
-bts.delete(5)
-bts.preOrder(bts.root)
+bts.delete(23)
+bts.inOrder(bts.root)
 // console.log(bts.search(bts.root ,12))
 // // bts.inOrder(bts.root)
 // // bts.postOrder(bts.root)
