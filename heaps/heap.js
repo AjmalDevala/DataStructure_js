@@ -18,7 +18,7 @@ function heapify(arr) {
       smallest = right;
     }
   
-    if (smallest !== i) {
+    if (smallest != i) {
       [arr[i], arr[smallest]] = [arr[smallest], arr[i]];
       heapifyHelper(arr, n, smallest);
     }

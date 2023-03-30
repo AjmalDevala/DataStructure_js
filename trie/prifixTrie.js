@@ -36,6 +36,7 @@ class Node {
   const trie = new Trie();
   
   trie.insert("hello");
-  trie.insert("horld");
+  trie.insert("hai");
+  trie.insert("demo");
   
-  console.log(trie.search("hello"));
+  console.log(trie.search("demo"));

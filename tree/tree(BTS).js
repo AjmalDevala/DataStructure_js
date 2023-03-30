@@ -131,7 +131,7 @@ bts.insert(34)
 bts.insert(2)
 
 bts.delete(23)
-bts.inOrder(bts.root)
+bts.postOrder(bts.root)
 // console.log(bts.search(bts.root ,12))
 // // bts.inOrder(bts.root)
 // // bts.postOrder(bts.root)

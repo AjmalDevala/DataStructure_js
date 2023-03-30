@@ -3,16 +3,12 @@ class Graph {
       this.noOfVertices = noOfVertices;
       this.adj = new Map();
     }
-  
     addVertex(v) {
       this.adj.set(v, []);
     }
-  
     addEdges(v, e) {
       this.adj.get(v).push(e);
-  
     }
-  
     printGraph() {
       let keys = this.adj.keys();
       for (let i of keys) {
